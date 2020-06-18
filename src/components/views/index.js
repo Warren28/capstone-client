@@ -2,3 +2,6 @@
 export { default as AllCampusesView } from "./AllCampusesView";
 export { default as CampusView } from "./CampusView";
 export { default as AddCampusFormView } from "./AddCampusFormView";
+export { default as NavBar } from "./NavBar";
+export { default as WelcomeView } from "./WelcomeView";
+export { default as AddItemView } from "./AddItemView";
