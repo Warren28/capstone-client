@@ -7,7 +7,8 @@ async function getRecipeList()
 {
   try 
   {
-    const response = await axios.get('http://www.recipepuppy.com/api/?i=onions,garlic');
+    const url1 = "https://cors-anywhere.herokuapp.com/";
+    const response = await axios.get(url1 + 'http://www.recipepuppy.com/api/?i=onions,garlic');
     console.log(response);
   } 
   catch (error) 
