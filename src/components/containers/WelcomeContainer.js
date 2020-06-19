@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-//import { fetchCampusThunk } from "../../thunks";
+import { fetchRecipeThunk } from "../../thunks";
 import { NavBar } from "../views";
 import { WelcomeView } from "../views";
 import { AddItemView } from "../views"
@@ -10,7 +10,7 @@ class WelcomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: ['']
+            items: []
         }
     }
 
@@ -18,36 +18,39 @@ class WelcomeContainer extends Component {
         //this.props.fetchCampus(this.props.match.params.id);
     }
 
-    handleSubmit = (e) => {
-        console.log(e)
-
+    handleAdd = (e) => {
         const newList = this.state.items
-        newList.push('warren')
+        newList.push(e.target.value)
         this.setState({
             items: newList  
         });
     }
-    /*
-    addView() {
-        return(<AddItemView
-              handleSubmit={this.handleSubmit}
-             />
-        );
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addItems(this.state.items);
     }
-    */
+
+    addFirstView() {
+        return(<AddItemView
+            handleAdd={this.handleAdd}
+          /> 
+        )
+    }
 
     render() {
         return(
             <>
             <NavBar/>
             <WelcomeView/>
+            {this.addFirstView()}
             {this.state.items.map(items => {
                 return(<AddItemView
-                        handleSubmit={this.handleSubmit}
+                        handleAdd={this.handleAdd}
                       /> 
                 )
             })}
-            <a class="btn btn-primary" href="result.html">Search</a>
+            <button onClick={this.handleSubmit} class="btn btn-primary">Search</button>
             </>
         )
     }
@@ -57,16 +60,22 @@ class WelcomeContainer extends Component {
 // map state to props
 const mapState = (state) => {
   return {
-    campus: state.campus,
+    //campus: state.campus,
   };
 };
 */
 
 const mapDispatch = (dispatch) => {
     return {
-      //addCampus: (campus) => dispatch(addCampusThunk(campus)),
+      addItems: (item) => dispatch(fetchRecipeThunk(item)),
     };
 };
 
+// Type check props;
+WelcomeContainer.propTypes = {
+    //allCampuses: PropTypes.array.isRequired,
+    addItems: PropTypes.func.isRequired,
+};
 
-export default connect(null, null)(WelcomeContainer);
+
+export default connect(null, mapDispatch)(WelcomeContainer);
