@@ -60,13 +60,13 @@ const mapState = (state) => {
     campus: state.campus,
   };
 };
+*/
 
 const mapDispatch = (dispatch) => {
-  return {
-    fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-  };
+    return {
+      //addCampus: (campus) => dispatch(addCampusThunk(campus)),
+    };
 };
-*/
 
 
 export default connect(null, null)(WelcomeContainer);
