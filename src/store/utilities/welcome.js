@@ -12,12 +12,12 @@ const fetchRecipes = (recipes) => {  //where
 };
 
 // Thunk Creators
-export const fetchRecipesThunk = () => (dispatch) => {
+export const fetchRecipesThunk = (url) => (dispatch) => {
   const url1 = "https://cors-anywhere.herokuapp.com/";
-  console.log("Thunk invoking");
+  //console.log("Thunk invoking");
   return axios
     // .get(url1 + `http://www.recipepuppy.com/api/?i=${items}`)
-    .get(url1 + "http://www.recipepuppy.com/api/?i=onions,garlic")
+    .get(url1 + url)
     .then((res) => res.data.results)
     .then((recipes) => dispatch(fetchRecipes(recipes)))
     .catch((err) => console.log(err));

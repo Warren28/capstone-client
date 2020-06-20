@@ -6,10 +6,21 @@ import { Link } from "react-router-dom";
 const ResultsView = (props) => {
   console.log(props.recipes);
   if (!props.recipes.length) {
-    return <div className="all-campuses">There are no recipe found</div>;
+    return (
+      <>
+      <Link to="/" className="nav-link">
+        Search
+      </Link>
+      <div className="all-campuses">There are no recipe found</div>
+      </>
+    );
   }
 
   return (
+    <>
+      <Link to="/" className="nav-link">
+        Search
+      </Link>
     <div className="all-campuses">
       {props.recipes.map((recipe) => (
         <div key={recipe.id}>
@@ -20,6 +31,7 @@ const ResultsView = (props) => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

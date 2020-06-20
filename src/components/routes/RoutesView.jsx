@@ -10,6 +10,8 @@ const RoutesView = () => {
     <Switch>
       <Route exact path="/" component={WelcomeContainer} />
       <Route exact path="/results" component={ResultsContainer} />
+      {/* <Route exact path="/login" component={ResultsContainer} />
+      <Route exact path="/signup" component={ResultsContainer} /> */}
     </Switch>
   );
 };

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchRecipesThunk } from "../../thunks";
+//import { fetchRecipesThunk } from "../../thunks";
 import { NavBarView } from "../views";
 import { ResultsView } from "../views";
 //import { AddItemView } from "../views"
@@ -10,31 +10,27 @@ class ResultsContainer extends Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {
-    //         items: ['']
+    //         url: "",
+
     //     }
     // }
 
-    componentDidMount() {
-        this.props.fetchRecipes();
-    }
-
-    // handleSubmit = (e) => {
-    //     console.log(e)
-
-    //     const newList = this.state.items
-    //     newList.push('warren')
-    //     this.setState({
-    //         items: newList  
-    //     });
+    // componentDidMount() {
+    //     this.props.fetchRecipes();
     // }
-    /*
-    addView() {
-        return(<AddItemView
-              handleSubmit={this.handleSubmit}
-             />
-        );
-    }
-    */
+
+    // handleChange = (e) => {
+    //   this.setState({
+    //     [e.target.name]: e.target.value,
+    //   });
+    // };
+  
+    // handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   const id = this.props.match.params.id;
+    //   this.props.editCampus(id, this.state);
+    //   this.props.history.push(`/campuses/${id}`);
+    // };
 
     render() {
         console.log(this.props.recipes);
@@ -64,17 +60,17 @@ const mapState = (state) => {
   };
   
   // Map dispatch to props;
-  const mapDispatch = (dispatch) => {
-    return {
-      fetchRecipes: () => dispatch(fetchRecipesThunk()),
-    };
-  };
+  // const mapDispatch = (dispatch) => {
+  //   return {
+  //     fetchRecipes: () => dispatch(fetchRecipesThunk()),
+  //   };
+  // };
   
   // Type check props;
   ResultsContainer.propTypes = {
     recipes: PropTypes.array.isRequired,
-    fetchRecipes: PropTypes.func.isRequired,
+    //fetchRecipes: PropTypes.func.isRequired,
   };
 
 
-export default connect(mapState, mapDispatch)(ResultsContainer);
+export default connect(mapState, null)(ResultsContainer);
