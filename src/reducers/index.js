@@ -3,3 +3,4 @@
 export { default as allCampuses } from "../store/utilities/allCampuses";
 export { default as campus } from "../store/utilities/campus";
 export { default as welcome } from "../store/utilities/welcome";
+export { default as user } from '../store/utilities/user';

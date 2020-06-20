@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import { 
   ResultsContainer, 
   WelcomeContainer,
+  Login, 
+  Signup,
 } from "../containers";
 
 const RoutesView = () => {
@@ -10,8 +12,8 @@ const RoutesView = () => {
     <Switch>
       <Route exact path="/" component={WelcomeContainer} />
       <Route exact path="/results" component={ResultsContainer} />
-      {/* <Route exact path="/login" component={ResultsContainer} />
-      <Route exact path="/signup" component={ResultsContainer} /> */}
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
     </Switch>
   );
 };

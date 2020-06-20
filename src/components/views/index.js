@@ -6,3 +6,4 @@ export { default as NavBarView } from "./NavBarView";
 export { default as ResultsView } from "./ResultsView";
 export { default as AddItemView } from "./AddItemView";
 export { default as WelcomeView } from "./WelcomeView";
+export { default as AuthFormView } from "./AuthFormView";

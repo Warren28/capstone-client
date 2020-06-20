@@ -62,7 +62,7 @@ const WelcomeView = (props) => {
 WelcomeView.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
-    url: PropTypes.string.isRequired,
+    //url: PropTypes.string.isRequired,
     // address: PropTypes.string.isRequired,
     // description: PropTypes.string.isRequired,
     // imageUrl: PropTypes.string.isRequired,
