@@ -24,6 +24,7 @@ const ResultView = (props) => {
             {props.recipes.map((recipe) => (
               <div>
                 <img src={recipe.thumbnail} class="card-img" alt="..."></img>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
               </div>
             ))}
           </div>
