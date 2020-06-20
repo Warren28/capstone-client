@@ -55,7 +55,7 @@ const mapSignup = state => {
   return {
     name: "signup",
     displayName: "Sign Up",
-    //error: state.user.error,
+    error: state.user.error,
     isLoggedIn: !!state.user.id,
     userEmail: state.user.email
   };
