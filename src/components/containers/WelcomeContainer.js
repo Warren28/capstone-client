@@ -11,6 +11,7 @@ class WelcomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            current: "",
             items: []
         }
     }
@@ -20,9 +21,15 @@ class WelcomeContainer extends Component {
         //<button  class="btn btn-primary">Search</button>
     }
 
+    handleChange = (e) => {
+        this.setState({
+            current: e.target.value
+        })
+    }
+
     handleAdd = (e) => {
-        const newList = this.state.items
-        newList.push(e.target.value)
+        const newList = [...this.state.items]
+        newList.push(this.state.current)
         this.setState({
             items: newList  
         });
@@ -30,7 +37,7 @@ class WelcomeContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log("warren")
+        console.log(this.state.items)
         this.props.addItems(this.state.items);
     }
 
@@ -49,6 +56,7 @@ class WelcomeContainer extends Component {
             {this.addFirstView()}
             {this.state.items.map(items => {
                 return(<AddItemView
+                        handleChange={this.handleChange}
                         handleAdd={this.handleAdd}
                       /> 
                 )
@@ -79,7 +87,7 @@ const mapDispatch = (dispatch) => {
 // Type check props;
 WelcomeContainer.propTypes = {
     //allCampuses: PropTypes.array.isRequired,
-    addItems: PropTypes.func.isRequired,
+    addItems: PropTypes.func.isRequired,    
 };
 
 

@@ -1,7 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 
 const ResultView = (props) => {
+  if (!props.recipes.length) {
+    return <div className="all-campuses">There are no recipes</div>;
+  }
+
+
+  console.log(props.recipes)
     return (
       <>
       <div class="card mb-3">

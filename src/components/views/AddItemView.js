@@ -7,7 +7,7 @@ const AddItemView = (props) => {
       <form>
         <div class="input-group mb-3">
           <div class="input-group-append">
-            <input type="text" class="form-control" placeholder="Insert an Ingredient" aria-label="Insert an Ingredient" aria-describedby="button-addon2"></input>
+            <input onChange={props.handleChange} type="text" class="form-control" placeholder="Insert an Ingredient" aria-label="Insert an Ingredient" aria-describedby="button-addon2"></input>
             <button onClick={props.handleAdd}  class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
           </div>
         </div>
