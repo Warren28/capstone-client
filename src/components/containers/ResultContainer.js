@@ -14,6 +14,7 @@ class ResultContainer extends Component {
     }
 
     componentDidMount() {
+        //this.props.recipes()
         //this.props.fetchCampus(this.props.match.params.id);
     }
 
