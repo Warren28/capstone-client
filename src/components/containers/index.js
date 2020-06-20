@@ -2,4 +2,5 @@
 export { default as AllCampusesContainer } from "./AllCampusesContainer";
 export { default as CampusContainer } from "./CampusContainer";
 export { default as AddCampusFormContainer } from "./AddCampusFormContainer";
+export { default as ResultsContainer } from "./ResultsContainer";
 export { default as WelcomeContainer } from "./WelcomeContainer";

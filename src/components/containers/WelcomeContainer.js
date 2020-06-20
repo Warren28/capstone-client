@@ -1,49 +1,46 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { fetchRecipesThunk } from "../../thunks";
-import { NavBar } from "../views";
-import { WelcomeView } from "../views";
-//import { AddItemView } from "../views"
+// import PropTypes from "prop-types";
+// import { fetchRecipeThunk } from "../../thunks";
+import { NavBarView, WelcomeView, AddItemView } from "../views";
+
 
 class WelcomeContainer extends Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {
-    //         items: ['']
+    //         items: []
     //     }
     // }
 
-    componentDidMount() {
-        this.props.fetchRecipes();
-    }
+    // componentDidMount() {
+    //     //this.props.fetchCampus(this.props.match.params.id);
+    // }
 
-    // handleSubmit = (e) => {
-    //     console.log(e)
-
+    // handleAdd = (e) => {
     //     const newList = this.state.items
-    //     newList.push('warren')
+    //     newList.push(e.target.value)
     //     this.setState({
     //         items: newList  
     //     });
     // }
-    /*
-    addView() {
-        return(<AddItemView
-              handleSubmit={this.handleSubmit}
-             />
-        );
-    }
-    */
+
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     this.props.addItems(this.state.items);
+    // }
+
+    // addFirstView() {
+    //     return(<AddItemView
+    //         handleAdd={this.handleAdd}
+    //       /> 
+    //     )
+    // }
 
     render() {
-        console.log(this.props.recipes);
         return(
             <>
-            <NavBar/>
-            <WelcomeView 
-                recipes={this.props.recipes}
-            />
+            <NavBarView/>
+            <WelcomeView/>
             {/* {this.state.items.map(items => {
                 return(<AddItemView
                         handleSubmit={this.handleSubmit}
@@ -56,25 +53,27 @@ class WelcomeContainer extends Component {
     }
 }
 
-// Map state to props;
+/*
+// map state to props
 const mapState = (state) => {
-    return {
-      recipes: state.welcome,
-    };
+  return {
+    //campus: state.campus,
   };
-  
-  // Map dispatch to props;
-  const mapDispatch = (dispatch) => {
-    return {
-      fetchRecipes: () => dispatch(fetchRecipesThunk()),
-    };
-  };
-  
-  // Type check props;
-  WelcomeContainer.propTypes = {
-    recipes: PropTypes.array.isRequired,
-    fetchRecipes: PropTypes.func.isRequired,
-  };
+};
+*/
+
+// const mapDispatch = (dispatch) => {
+//     return {
+//       addItems: (item) => dispatch(fetchRecipeThunk(item)),
+//     };
+// };
+
+// // Type check props;
+// WelcomeContainer.propTypes = {
+//     //allCampuses: PropTypes.array.isRequired,
+//     addItems: PropTypes.func.isRequired,
+// };
 
 
-export default connect(mapState, mapDispatch)(WelcomeContainer);
+//export default connect(null, mapDispatch)(WelcomeContainer);
+export default WelcomeContainer;
