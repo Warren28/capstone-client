@@ -38,7 +38,9 @@ class ResultContainer extends Component {
             <>
             <NavBar/>
             <button onClick={this.handleSubmit} class="btn btn-primary">Search</button>
-            <ResultView/>
+            <ResultView
+              recipes={this.props.recipes}
+            />
             </>
         )
     }

@@ -16,7 +16,7 @@ export const fetchRecipeThunk = (items) => (dispatch) => {
   const url1 = "https://cors-anywhere.herokuapp.com/";
   return axios
     .get(url1 + `http://www.recipepuppy.com/api/?i=${items}`)
-    .then((res) => res.data)
+    .then((res) => res.data.results)
     .then((recipe) => dispatch(fetchRecipes(recipe)))
     .catch((err) => console.log(err));
 };
