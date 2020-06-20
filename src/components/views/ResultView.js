@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ResultView = (props) => {
     return (
       <>
-      <div class="card mb-3" style="max-width: 540px;">
+      <div class="card mb-3">
           <div class="row no-gutters">
               <div class="col-md-4">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" class="card-img" alt="..."></img>
