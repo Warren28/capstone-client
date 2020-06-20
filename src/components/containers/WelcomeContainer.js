@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { fetchRecipeThunk } from "../../thunks";
 import { NavBar } from "../views";
 import { WelcomeView } from "../views";
-import { AddItemView } from "../views"
+import { AddItemView } from "../views";
+import { Link } from "react-router-dom";
 
 class WelcomeContainer extends Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class WelcomeContainer extends Component {
 
     componentDidMount() {
         //this.props.fetchCampus(this.props.match.params.id);
+        //<button  class="btn btn-primary">Search</button>
     }
 
     handleAdd = (e) => {
@@ -28,6 +30,7 @@ class WelcomeContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log("warren")
         this.props.addItems(this.state.items);
     }
 
@@ -50,7 +53,9 @@ class WelcomeContainer extends Component {
                       /> 
                 )
             })}
-            <button onClick={this.handleSubmit} class="btn btn-primary">Search</button>
+            <button onClick={this.handleSubmit}>
+                <Link to={'/results'} >Search</Link>
+            </button>
             </>
         )
     }
