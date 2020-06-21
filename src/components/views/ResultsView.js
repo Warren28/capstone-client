@@ -28,7 +28,7 @@ const ResultsView = (props) => {
               <h1>{recipe.title}</h1>
             </Link>
             <img src={recipe.thumbnail} class="card-img" alt="..."></img>
-            {/* <button onClick={props.bookmark(recipe)}>+</button> */}
+            <button onClick={props.handleAdd(recipe)}>+</button>
             <p>{recipe.ingredients}</p>
           </div>
         ))}
@@ -39,6 +39,7 @@ const ResultsView = (props) => {
 
 ResultsView.propTypes = {
   recipes: PropTypes.array.isRequired,
+  handleAdd: PropTypes.func.isRequired,
 };
 
 export default ResultsView;

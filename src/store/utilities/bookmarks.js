@@ -15,7 +15,7 @@ const bookmarkRecipe = (recipe) => {
 // Thunk Creators
 export const bookmarkRecipeThunk = (recipe) => (dispatch) => {
   return axios
-    .post(`http://localhost:3001/`, recipe)
+    .post(`http://localhost:3001/api/bookmarks`, recipe)
     .then((res) => res.data)
     .then((newBookmark) => dispatch(bookmarkRecipe(newBookmark)))
     .catch((err) => console.log(err));

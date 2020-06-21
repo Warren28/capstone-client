@@ -7,26 +7,27 @@ import { ResultsView } from "../views";
 //import { AddItemView } from "../views"
 
 class ResultsContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      bookmarks: [],
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     bookmarks: [],
+  //   };
+  // }
 
-  componentDidMount() {
-    this.props.addBookmark();
-  }
+  // componentDidMount() {
+  //   this.props.addBookmark();
+  // }
 
   handleAdd = (recipeObject) => (event) => {
-    const newList = [...this.state.bookmarks];
+    recipeObject.userId = this.props.id;
+    // const newList = [...this.state.bookmarks];
     console.log(recipeObject);
-    newList.push(recipeObject);
+    // newList.push(recipeObject);
 
-    this.setState({
-      bookmarks: newList,
-    });
-    this.props.addBookmark(this.state.bookmarks);
+    // this.setState({
+    //   bookmarks: newList,
+    // });
+    this.props.addBookmark(recipeObject);
   };
   // constructor(props) {
   //     super(props);
@@ -58,7 +59,10 @@ class ResultsContainer extends Component {
     return (
       <>
         <NavBarContainer />
-        <ResultsView recipes={this.props.recipes} />
+        <ResultsView 
+        recipes={this.props.recipes} 
+        handleAdd={this.handleAdd}
+        />
         {/* {this.state.items.map(items => {
                 return(<AddItemView
                         handleSubmit={this.handleSubmit}
@@ -75,6 +79,7 @@ class ResultsContainer extends Component {
 const mapState = (state) => {
   return {
     recipes: state.welcome,
+    id: state.user.id
   };
 };
 
