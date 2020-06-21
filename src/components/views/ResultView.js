@@ -20,14 +20,12 @@ const ResultView = (props) => {
     return (
       <>
       <div class="card mb-3">
-          <div>
-            {props.recipes.map((recipe) => (
-              <div>
-                <img src={recipe.thumbnail} class="card-img" alt="..."></img>
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
-              </div>
-            ))}
-          </div>
+        {props.recipes.map((recipe) => (
+            <div>
+              <img src={recipe.thumbnail} class="card-img" alt="..."></img>
+              <button onClick={props.bookmark(recipe)}>+</button>
+            </div>
+        ))}
       </div>
       </>
     );
