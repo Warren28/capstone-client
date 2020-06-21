@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchRecipeThunk } from "../../thunks";
+import { bookmarkRecipeThunk } from "../../thunks";
 import { NavBar } from "../views";
 import { ResultView } from "../views";
 
@@ -14,38 +14,31 @@ class ResultContainer extends Component {
     }
 
     componentDidMount() {
-        //this.props.recipes()
-        //this.props.fetchCampus(this.props.match.params.id);
+        this.props.addBookmark()
     }
 
-    handleAdd = (e) => {
-        /*
-        const newList = this.state.items
-        newList.push(e.target.value)
+    handleAdd = recipeObject => event => {
+        const newList = [...this.state.bookmarks]
+        console.log(recipeObject)
+        newList.push(recipeObject)
+
         this.setState({
-            items: newList  
+            bookmarks: newList  
         });
-        */
-    }
-
-    handleSubmit = (e) => {
-        //e.preventDefault();
-        //this.props.addItems(this.state.items);
+        this.props.addBookmark(this.state.bookmarks)
     }
 
     render() {
         return(
             <>
-            <NavBar/>
-            <button onClick={this.handleSubmit} class="btn btn-primary">Search</button>
             <ResultView
               recipes={this.props.recipes}
+              bookmark={this.handleAdd}
             />
             </>
         )
     }
 }
-
 
 // map state to props
 const mapState = (state) => {
@@ -54,19 +47,19 @@ const mapState = (state) => {
   };
 };
 
-/*
+
 const mapDispatch = (dispatch) => {
     return {
-      addItems: (item) => dispatch(fetchRecipeThunk(item)),
+      addBookmark: (recipe) => dispatch(bookmarkRecipeThunk(recipe)),
     };
 };
-*/
+
 
 // Type check props;
 ResultContainer.propTypes = {
     recipes: PropTypes.array.isRequired,
-    //addItems: PropTypes.func.isRequired,
+    addBookmark: PropTypes.func.isRequired,
 };
 
 
-export default connect(mapState, null)(ResultContainer);
+export default connect(mapState, mapDispatch)(ResultContainer);
