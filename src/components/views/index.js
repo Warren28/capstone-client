@@ -7,3 +7,5 @@ export { default as ResultsView } from "./ResultsView";
 export { default as AddItemView } from "./AddItemView";
 export { default as WelcomeView } from "./WelcomeView";
 export { default as AuthFormView } from "./AuthFormView";
+export { default as LogoutView } from "./LogoutView";
+export { default as ProfileView } from "./ProfileView";

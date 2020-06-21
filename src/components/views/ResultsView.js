@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ResultsView = (props) => {
-  console.log(props.recipes);
+  //console.log(props.recipes);
   if (!props.recipes.length) {
     return (
       <>

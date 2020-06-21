@@ -5,3 +5,6 @@ export { default as AddCampusFormContainer } from "./AddCampusFormContainer";
 export { default as ResultsContainer } from "./ResultsContainer";
 export { default as WelcomeContainer } from "./WelcomeContainer";
 export { Login, Signup } from "./AuthFormContainer";
+export { default as NavBarContainer } from "./NavBarContainer";
+export { default as LogoutContainer } from "./LogoutContainer";
+export { default as ProfileContainer } from "./ProfileContainer";

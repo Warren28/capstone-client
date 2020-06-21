@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 //import { fetchRecipesThunk } from "../../thunks";
-import { NavBarView } from "../views";
+import { NavBarContainer } from "./";
 import { ResultsView } from "../views";
 //import { AddItemView } from "../views"
 
@@ -33,10 +33,10 @@ class ResultsContainer extends Component {
     // };
 
     render() {
-        console.log(this.props.recipes);
+        //console.log(this.props.recipes);
         return(
             <>
-            <NavBarView/>
+            <NavBarContainer/>
             <ResultsView 
                 recipes={this.props.recipes}
             />

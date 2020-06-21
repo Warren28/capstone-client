@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { fetchRecipesThunk } from "../../thunks";
-import { NavBarView, WelcomeView} from "../views";
+import { WelcomeView} from "../views";
 import { connect } from "react-redux";
+import { NavBarContainer } from "./";
 
 class WelcomeContainer extends Component {
     constructor(props) {
@@ -53,7 +54,7 @@ class WelcomeContainer extends Component {
     render() {
         return(
             <>
-            <NavBarView/>
+            <NavBarContainer/>
             <WelcomeView
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}

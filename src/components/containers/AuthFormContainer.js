@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { auth } from "../../thunks";
-import { AuthFormView } from "../views";
+import { AuthFormView, NavBarView } from "../views";
 
 // Smart container;
 class AuthFormContainer extends Component {
@@ -21,20 +21,23 @@ class AuthFormContainer extends Component {
     event.preventDefault();
     const formName = event.target.name;
     this.props.loginOrSignup(this.state.email, this.state.password, formName);
-    this.props.history.push("/");
+    //this.props.history.push("/");
   }
 
   render() {
     return (
-      <AuthFormView
-        name={this.props.name}
-        displayName={this.props.displayName}
-        error={this.props.error}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        isLoggedIn={this.props.isLoggedIn}
-        userEmail={this.props.userEmail}
-      />
+      <>
+        <NavBarView/>
+        <AuthFormView
+          name={this.props.name}
+          displayName={this.props.displayName}
+          error={this.props.error}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          isLoggedIn={this.props.isLoggedIn}
+          userEmail={this.props.userEmail}
+        />
+      </>
     );
   }
 };
