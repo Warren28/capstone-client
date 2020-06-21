@@ -28,6 +28,7 @@ const ResultsView = (props) => {
               <h1>{recipe.title}</h1>
             </Link>
             <img src={recipe.thumbnail} class="card-img" alt="..."></img>
+            {/* <button onClick={props.bookmark(recipe)}>+</button> */}
             <p>{recipe.ingredients}</p>
           </div>
         ))}
