@@ -8,10 +8,10 @@ const ResultsView = (props) => {
   if (!props.recipes.length) {
     return (
       <>
-      <Link to="/" className="nav-link">
-        Search
-      </Link>
-      <div className="all-campuses">There are no recipe found</div>
+        <Link to="/" className="nav-link">
+          Search
+        </Link>
+        <div className="all-campuses">There are no recipe found</div>
       </>
     );
   }
@@ -21,16 +21,17 @@ const ResultsView = (props) => {
       <Link to="/" className="nav-link">
         Search
       </Link>
-    <div className="all-campuses">
-      {props.recipes.map((recipe) => (
-        <div key={recipe.id}>
-          <Link to={`/recipe/${recipe.id}`}>
-            <h1>{recipe.title}</h1>
-          </Link>
-          <p>{recipe.ingredients}</p>
-        </div>
-      ))}
-    </div>
+      <div className="all-campuses">
+        {props.recipes.map((recipe) => (
+          <div key={recipe.id}>
+            <Link to={`/recipe/${recipe.id}`}>
+              <h1>{recipe.title}</h1>
+            </Link>
+            <img src={recipe.thumbnail} class="card-img" alt="..."></img>
+            <p>{recipe.ingredients}</p>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
