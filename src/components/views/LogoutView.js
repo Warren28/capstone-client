@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const LogoutView = (props) => {
   return (
     <>
-      <div>You logouted</div>
+      <div>You loggedout</div>
       <nav>
         <Link to="/" className="nav-link">
           Home
