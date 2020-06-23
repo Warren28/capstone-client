@@ -3,38 +3,37 @@
 }
 
 .app-header {
-  background-color: #ED254E;
+  background-color: #ed254e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #F9DC5C;
+  color: #f9dc5c;
 }
 
-.card-img
-{
+.card-img {
   width: 200px;
   height: 200px;
 }
 
-.info
-{
-  text-align: left;
+.info {
+  text-align: center;
 }
 
-.info h1
-{
-  color: #F9DC5C;
+.info h1 {
+  color: #f9dc5c;
 }
 
-.bg-dark
-{
-  background-color: #ED254E!important;
+.bg-dark {
+  background-color: #ed254e !important;
 }
 
-.nav-link
-{
-  color: #F9DC5C!important;
+.nav-link {
+  color: #f9dc5c !important;
+}
+
+body {
+  background-color: #ff8c33;
 }
