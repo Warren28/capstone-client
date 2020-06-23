@@ -9,18 +9,33 @@ const AuthFormView = props => {
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="email">
-            <small>Email</small>
+            <small></small>
           </label>
-          <input name="email" type="text" onChange={handleChange} />
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+            </div>
+            <input name="email" type="text" class="form-control" placeholder="foobar@xyz.com" onChange={handleChange}/>
+          </div>
+          
+          {/* <input name="email" type="text" onChange={handleChange} /> */}
         </div>
         <div>
           <label htmlFor="password">
-            <small>Password</small>
+            <small></small>
           </label>
-          <input name="password" type="password" onChange={handleChange} />
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+            </div>
+            <input name="password" type="password" class="form-control" placeholder="password" onChange={handleChange}/>
+          </div>
+          {/* <input name="password" type="password" onChange={handleChange} /> */}
         </div>
         <div>
-          <button type="submit">{displayName}</button>
+          <button type="submit" class="btn btn-success">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>

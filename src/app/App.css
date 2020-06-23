@@ -3,12 +3,38 @@
 }
 
 .app-header {
-  background-color: #282c34;
+  background-color: #ED254E;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #F9DC5C;
+}
+
+.card-img
+{
+  width: 200px;
+  height: 200px;
+}
+
+.info
+{
+  text-align: left;
+}
+
+.info h1
+{
+  color: #F9DC5C;
+}
+
+.bg-dark
+{
+  background-color: #ED254E!important;
+}
+
+.nav-link
+{
+  color: #F9DC5C!important;
 }

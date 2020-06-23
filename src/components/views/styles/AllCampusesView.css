@@ -1,3 +1,8 @@
 .all-campuses {
-  color: tomato;
+  color: #F9DC5C;
+}
+
+.no-result
+{
+  color: black;
 }
