@@ -9,6 +9,7 @@ const ProfileView = (props) => {
   if (props.user.bookmarks) {
     display = props.user.bookmarks.map((bookmark) => (
       <div key={bookmark.id}>
+        <img src={bookmark.imageUrl} class="card-img" alt="..."></img>
         <h1>{bookmark.title}</h1>
         <p>{bookmark.ingredients}</p>
       </div>
