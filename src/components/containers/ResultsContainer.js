@@ -4,72 +4,19 @@ import { connect } from "react-redux";
 import { bookmarkRecipeThunk } from "../../thunks";
 import { NavBarContainer } from "./";
 import { ResultsView } from "../views";
-//import { AddItemView } from "../views"
 
 class ResultsContainer extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     bookmarks: [],
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   this.props.addBookmark();
-  // }
-
   handleAdd = (recipeObject) => (event) => {
     recipeObject.userId = this.props.id;
-    // const newList = [...this.state.bookmarks];
     console.log(recipeObject);
-    // newList.push(recipeObject);
-
-    // this.setState({
-    //   bookmarks: newList,
-    // });
     this.props.addBookmark(recipeObject);
   };
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         url: "",
-
-  //     }
-  // }
-
-  // componentDidMount() {
-  //     this.props.fetchRecipes();
-  // }
-
-  // handleChange = (e) => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const id = this.props.match.params.id;
-  //   this.props.editCampus(id, this.state);
-  //   this.props.history.push(`/campuses/${id}`);
-  // };
 
   render() {
-    //console.log(this.props.recipes);
     return (
       <>
         <NavBarContainer />
-        <ResultsView 
-        recipes={this.props.recipes} 
-        handleAdd={this.handleAdd}
-        />
-        {/* {this.state.items.map(items => {
-                return(<AddItemView
-                        handleSubmit={this.handleSubmit}
-                      /> 
-                )
-            })}
-            <a class="btn btn-primary" href="result.html">Search</a> */}
+        <ResultsView recipes={this.props.recipes} handleAdd={this.handleAdd} />
       </>
     );
   }
@@ -79,7 +26,7 @@ class ResultsContainer extends Component {
 const mapState = (state) => {
   return {
     recipes: state.welcome,
-    id: state.user.id
+    id: state.user.id,
   };
 };
 
@@ -88,13 +35,6 @@ const mapDispatch = (dispatch) => {
     addBookmark: (recipe) => dispatch(bookmarkRecipeThunk(recipe)),
   };
 };
-
-// Map dispatch to props;
-// const mapDispatch = (dispatch) => {
-//   return {
-//     fetchRecipes: () => dispatch(fetchRecipesThunk()),
-//   };
-// };
 
 // Type check props;
 ResultsContainer.propTypes = {

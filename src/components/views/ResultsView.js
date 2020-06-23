@@ -1,5 +1,4 @@
 import React from "react";
-//import "./styles/AllCampusesView.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,9 @@ const ResultsView = (props) => {
   if (!props.recipes.length) {
     return (
       <>
-        <Link to="/" className="nav-link">Search</Link>
+        <Link to="/" className="nav-link">
+          Search
+        </Link>
         <div className="no-result">There are no recipes found</div>
       </>
     );
@@ -16,20 +17,22 @@ const ResultsView = (props) => {
 
   return (
     <>
-      <Link to="/" className="nav-link">Search</Link>
-      
+      <Link to="/" className="nav-link">
+        Search
+      </Link>
+
       <div className="all-campuses">
         {props.recipes.map((recipe) => (
           <div key={recipe.id}>
             <img src={recipe.thumbnail} class="card-img" alt="..."></img>
-            <div class = "info">
+            <div class="info">
               <Link to={`/recipe/${recipe.id}`}>
                 <h1>{recipe.title}</h1>
               </Link>
               <p>Ingredients: {recipe.ingredients}</p>
               <button onClick={props.handleAdd(recipe)}>+</button>
+              <hr class="line"></hr>
             </div>
-            
           </div>
         ))}
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles/NavBarView.css";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Button } from "react-bootstrap";
 
@@ -26,17 +25,6 @@ const NavBarView = (props) => {
           </Navbar.Collapse>
         </Navbar>
       </header>
-      //   <nav>
-      //   <Link to="/" className="nav-link">
-      //     Home
-      //   </Link>
-      //   <Link to="/login" className="nav-link">
-      //     Login
-      //   </Link>
-      //   <Link to="/signup" className="nav-link">
-      //     SignUp
-      //   </Link>
-      // </nav>
     );
   } else {
     display = (
@@ -55,20 +43,6 @@ const NavBarView = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      //   <nav>
-      //   <Link to="/" className="nav-link">
-      //     Home
-      //   </Link>
-      //   <Link to="/logout" className="nav-link">
-      //     Logout
-      //   </Link>
-      //   <Link to="/signup" className="nav-link">
-      //     SignUp
-      //   </Link>
-      //   <Link to="/userInfo" className="nav-link">
-      //     Profile
-      //   </Link>
-      // </nav>
     );
   }
   return <>{display}</>;

@@ -5,18 +5,18 @@ const GET_USER = "GET_USER";
 const REMOVE_USER = "REMOVE_USER";
 
 // ACTION CREATORS
-const getUser = user => { 
+const getUser = (user) => {
   return {
     type: GET_USER,
-    payload: user
-  }
-}
+    payload: user,
+  };
+};
 
-const removeUser = () => { 
-  return { 
-    type: REMOVE_USER 
-  }
-}
+const removeUser = () => {
+  return {
+    type: REMOVE_USER,
+  };
+};
 
 // THUNK CREATORS
 // export const me = (id) => async dispatch => {
@@ -37,29 +37,32 @@ export const me = (id) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const auth = (email, password, method) => async dispatch => {
+export const auth = (email, password, method) => async (dispatch) => {
   let res;
   try {
-    res = await axios.post(`http://localhost:3001/auth/${method}`, { email, password }, { withCredentials: true });
-  }
-  catch (authError) {
+    res = await axios.post(
+      `http://localhost:3001/auth/${method}`,
+      { email, password },
+      { withCredentials: true }
+    );
+  } catch (authError) {
     return dispatch(getUser({ error: authError }));
   }
 
   try {
     dispatch(getUser(res.data));
-  }
-  catch (dispatchOrHistoryErr) {
+  } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr);
   }
 };
 
-export const logout = () => async dispatch => {
+export const logout = () => async (dispatch) => {
   try {
-    await axios.delete("http://localhost:3001/auth/logout", { withCredentials: true });
+    await axios.delete("http://localhost:3001/auth/logout", {
+      withCredentials: true,
+    });
     dispatch(removeUser());
-  }
-  catch (err) {
+  } catch (err) {
     console.error(err);
   }
 };
@@ -74,6 +77,6 @@ const reducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

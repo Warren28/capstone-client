@@ -37,3 +37,7 @@
 body {
   background-color: #ff8c33;
 }
+
+.line {
+  border: 10px solid red;
+}

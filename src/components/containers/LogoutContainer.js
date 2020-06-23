@@ -3,35 +3,33 @@ import PropTypes from "prop-types";
 import { logout } from "../../thunks";
 import { connect } from "react-redux";
 import { LogoutView } from "../views";
+import { NavBarContainer } from "./";
 
 class LogoutContainer extends Component {
+  componentDidMount() {
+    this.props.logout();
+  }
 
-
-    componentDidMount() {
-        this.props.logout();
-    }
-
-    render() {
-        return(
-            <>
-           <LogoutView/> 
-           </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <NavBarContainer />
+        <LogoutView />
+      </>
+    );
+  }
 }
 
-
 const mapDispatch = (dispatch) => {
-    return {
-      logout: () => dispatch(logout()),
-    };
+  return {
+    logout: () => dispatch(logout()),
+  };
 };
 
 // Type check props;
 LogoutContainer.propTypes = {
-    //allCampuses: PropTypes.array.isRequired,
-    logout: PropTypes.func.isRequired,
+  //allCampuses: PropTypes.array.isRequired,
+  logout: PropTypes.func.isRequired,
 };
-
 
 export default connect(null, mapDispatch)(LogoutContainer);
